@@ -24,6 +24,21 @@ network={
 }
 ```
 
+## Enviroment setup
+Version control
+'''sudo apt-get install git'''
+
+Get the code
+'''git clone https://github.com/htmoor/piano-staircase.git'''
+
+Player for mp3 files.
+'''sudo apt-get install omxplayer'''
+
+Python
+'''sudo apt-get install python3'''
+
+
+
 ## Power saving
 
 Disable HDMI hardware
