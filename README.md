@@ -7,9 +7,9 @@ OS: Rasbian buster lite
 Arduino: ATMEGA328p (nano form factor)
 
 ## SD setup for headless opperation
-ssh file place in root boot directory to activate ssh.
+File name 'ssh' placed in root boot directory to activate ssh. No file extension, no content.
 
-Network setup with wpa_supplicant.conf file.
+Network setup with wpa_supplicant.conf file:
 ```
 country=NZ
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
