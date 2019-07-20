@@ -3,8 +3,11 @@ Piano staircase created for Unleash Space. Raspberry pi + Arduino
 
 ## Specs
 Pi: Rasberry Pi 3 model A+
+
 OS: Rasbian buster lite
+
 Arduino: ATMEGA328p (nano form factor)
+
 
 ## SD setup for headless opperation
 File name 'ssh' placed in root boot directory to activate ssh. No file extension, no content.
