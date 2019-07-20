@@ -31,8 +31,11 @@ Version control
 Get the code
 ```git clone https://github.com/htmoor/piano-staircase.git```
 
-Player for mp3 files
+Player for testing mp3 files
 ```sudo apt-get install omxplayer```
+
+mp3 player for python
+```sudo apt-get install mpg321```
 
 Python
 ```sudo apt-get install python3```
