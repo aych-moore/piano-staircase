@@ -23,3 +23,9 @@ network={
     psk="NETWORK-PASSWORD"
 }
 ```
+
+## Power saving
+
+Disable HDMI hardware
+
+Disable WiFi
