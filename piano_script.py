@@ -11,7 +11,7 @@ pygame.mixer.init()
 
 for letter in letters:
     for num in range(8):
-        pygame.mixer.music.load("audio/piano/" + letter + num + "5.mp3")
+        pygame.mixer.music.load("audio/piano/" + letter + str(num) + "5.mp3")
         pygame.mixer.music.play()
         time.sleep(200)
 
