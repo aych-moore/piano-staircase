@@ -1,5 +1,4 @@
 import time
-import RPi.GPIO as GPIO
 from pygame import mixer
 
 print("script begin")
