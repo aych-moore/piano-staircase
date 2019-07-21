@@ -8,6 +8,7 @@ letters = ['A', 'B', 'C', 'D', 'E', 'F']
 
 pygame.mixer.init()
 pygame.init()
+pygame.mixer.music.set_volume(100)
 
 sounds = []
 for letter in letters:
