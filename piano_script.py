@@ -19,7 +19,7 @@ pygame.mixer.set_num_channels(50)
 for sound in sounds:
     print("PLAYING SOUND")
     sound.play()
-    time.sleep(0.5)
+    time.sleep(0.2)
     
 
 print("script end")
