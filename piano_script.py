@@ -6,7 +6,7 @@ print("script begin")
 letters = ['A', 'B', 'C', 'D', 'E', 'F']
 
 pygame.mixer.init()
-pygame.mixer.music.load("C5.wav")
+pygame.mixer.music.load("C5.mp3")
 pygame.mixer.music.play()
 while pygame.mixer.music.get_busy() == True:
     continue
