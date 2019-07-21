@@ -1,16 +1,13 @@
 import time
-import pygame
+import RPi.GPIO as GPIO
+from pygame import mixer
 
 print("script begin")
 
 letters = ['A', 'B', 'C', 'D', 'E', 'F']
 
-pygame.mixer.init()
-pygame.mixer.music.load("C5.mp3")
-pygame.mixer.music.play()
-while pygame.mixer.music.get_busy() == True:
-    continue
-
+sound = mixer.Sound('C5.wav')
+sound.play()
 
 """
 for letter in letters:
