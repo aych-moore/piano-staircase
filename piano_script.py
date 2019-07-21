@@ -5,7 +5,7 @@ print("script begin")
 
 letters = ['A', 'B', 'C', 'D', 'E', 'F']
 
-sound = mixer.Sound('audio/piano/C5.mp3')
+sound = mixer.Sound('C5.mp3')
 sound.play()
 
 """
