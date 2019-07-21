@@ -24,7 +24,7 @@ for sound in sounds:
     time.sleep(0.2)
 """
 while True:
-    random_time = random.randint(10,100)*0.01
+    random_time = random.randint(5,60)*0.01
     for i in range(random.randint(1,5)):
         random.choice(sounds).play()
         time.sleep(random_time)
