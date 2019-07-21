@@ -23,7 +23,7 @@ for sound in sounds:
     sound.play()
     time.sleep(0.2)
 """
-while true:
+while True:
     random.choice(sounds).play()
     time.sleep(0.2)
 
