@@ -25,20 +25,17 @@ network={
 ```
 
 ## Enviroment setup
-Version control
-```sudo apt-get install git```
 
-Get the code
-```git clone https://github.com/htmoor/piano-staircase.git```
+```
+sudo apt-get install git
+git clone https://github.com/htmoor/piano-staircase.git
+sudo apt-get install python3
+sudo apt-get install python-pip
+sudo pip install pygame
+```
 
-Player for testing mp3 files
-```sudo apt-get install omxplayer```
 
-mp3 player for python
-```sudo apt-get install mpg321```
 
-Python
-```sudo apt-get install python3```
 
 
 
