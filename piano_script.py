@@ -8,6 +8,7 @@ letters = ['A', 'B', 'C', 'D', 'E', 'F']
 pygame.mixer.init()
 pygame.mixer.music.load("C5.mp3")
 pygame.mixer.music.play()
+time.sleep(1000)
 
 """
 for letter in letters:
