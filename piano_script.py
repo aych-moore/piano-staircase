@@ -7,18 +7,19 @@ letters = ['A', 'B', 'C', 'D', 'E', 'F']
 
 pygame.mixer.init()
 pygame.init()
-pygame.mixer.set_num_channels(50)
 
+sounds = []
 for letter in letters:
     for num in range(8):
-        audio_file = "audio/piano/" + letter + str(num) + ".mp3"
-        print("PLAYING: " + audio_file)
-        
-        pygame.mixer.music.load(audio_file)
-        pygame.mixer.music.play()
-        time.sleep(500)
+        audio_file = "audio/piano/" + letter + str(num) + ".wav"
+        sounds.append(pygame.mixer.Sound(audio_file))
+    
 
-
-
+pygame.mixer.set_num_channels(50)
+for sound in sounds:
+    print("PLAYING SOUND")
+    sound.play()
+    time.sleep(0.5)
+    
 
 print("script end")
