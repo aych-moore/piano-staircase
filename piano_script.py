@@ -10,7 +10,7 @@ pygame.init()
 
 sounds = []
 for letter in letters:
-    for num in range(8):
+    for num in range(1,8):
         audio_file = "audio/piano/" + letter + str(num) + ".wav"
         sounds.append(pygame.mixer.Sound(audio_file))
     
