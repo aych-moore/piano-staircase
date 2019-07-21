@@ -5,8 +5,8 @@ print("script begin")
 
 letters = ['A', 'B', 'C', 'D', 'E', 'F']
 
-sound = mixer.Sound('C5.mp3')
-sound.play()
+pygame.mixer.music.load("C5.mp3")
+pygame.mixer.music.play()
 
 """
 for letter in letters:
