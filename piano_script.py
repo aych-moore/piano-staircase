@@ -1,5 +1,5 @@
+import pygame
 import time
-from pygame import mixer
 
 print("script begin")
 
