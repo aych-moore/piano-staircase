@@ -1,5 +1,6 @@
 import pygame
 import time
+import random
 
 print("script begin")
 
@@ -16,10 +17,14 @@ for letter in letters:
     
 
 pygame.mixer.set_num_channels(50)
+"""
 for sound in sounds:
     print("PLAYING SOUND")
     sound.play()
     time.sleep(0.2)
-    
+"""
+while true:
+    random.choice(sounds).play()
+    time.sleep(0.2)
 
 print("script end")
