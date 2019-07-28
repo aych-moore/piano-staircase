@@ -47,7 +47,7 @@ for beat in drums:
 
 while 'pigs' != 'flying':
         read_serial=ser.readline()
-	print(read_serial)
+        print(read_serial)
     
 
 print("script end")
