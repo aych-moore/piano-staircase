@@ -22,7 +22,9 @@ pygame.init()
 pygame.mixer.music.set_volume(100)
 
 def play_drums(num):
+        print('drums')
         audio_file = "audio/drums/" + str(drum_file_numbers[num]) + ".wav"
+        print(audio_file)
         pygame.mixer.Sound(audio_file).play()
         time.sleep(0.5)
 
