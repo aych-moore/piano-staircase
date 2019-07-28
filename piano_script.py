@@ -5,7 +5,7 @@ import random
 print("script begin")
 
 letters = ['A', 'B', 'C', 'D', 'E', 'F']
-numbers = [1,5,7,8,11,13,16,18]
+numbers = [1,7,8,13,11,18,16,5]
 
 pygame.mixer.init()
 pygame.init()
@@ -36,11 +36,9 @@ for beat in numbers:
 pygame.mixer.set_num_channels(50)
 
 
-while True:
-        random_time = random.randint(1,40)*0.01
-        for i in range(random.randint(1,5)):
-                random.choice(drums).play()
-                time.sleep(random_time)
+for beat in drums:
+        random.choice(sounds).play()
+        time.sleep(0.5)
     
 
 print("script end")
