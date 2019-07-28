@@ -52,7 +52,7 @@ pygame.mixer.set_num_channels(50)
 
 
 while 'pigs' != 'flying':
-        message = ser.readline() 
+        message = ser.readline().strip()
         print("Incoming from arduino: " + message) #message format: "insturment,num"
         message_components = message.split(',') #format: [insturment,num]
         if message_components[0] == 'piano':
