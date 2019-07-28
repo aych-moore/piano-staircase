@@ -1,6 +1,10 @@
 import pygame
 import time
 import random
+import serial
+
+ser = serial.Serial('/dev/ttyACM0',9600)
+s = [0,1]
 
 print("script begin")
 
@@ -35,10 +39,17 @@ for beat in numbers:
 
 pygame.mixer.set_num_channels(50)
 
-
+"""
 for beat in drums:
         beat.play()
         time.sleep(1.5)
+"""
+
+while 'pigs' != 'flying':
+        read_serial=ser.readline()
+	s[0] = str(int (ser.readline(),16))
+	print(s[0])
+	print(read_serial)
     
 
 print("script end")
