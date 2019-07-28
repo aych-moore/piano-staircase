@@ -28,7 +28,7 @@ def play_drums(num):
         pygame.mixer.Sound(audio_file).play()
         time.sleep(0.5)
 
-def play_piano():
+def play_piano(num):
         pass
 
 def play_song():
