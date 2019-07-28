@@ -54,7 +54,7 @@ pygame.mixer.set_num_channels(50)
 while 'pigs' != 'flying':
         message = ser.readline().strip()
         print(message) #message format: "insturment,num"
-        message_components = message.split(',') #format: [insturment,num]
+        message_components = message.split(b',') #format: [insturment,num]
         if message_components[0] == 'piano':
                 play_piano(message_components[1])
         elif message_components[0] == 'drums':
