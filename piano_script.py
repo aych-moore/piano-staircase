@@ -54,7 +54,7 @@ pygame.mixer.set_num_channels(50)
 
 
 while 'pigs' != 'flying':
-        message = ser.readline().decode("utf-8") 
+        message = ser.readline().decode("utf-8").strip()
         print(message) #message format: "insturment,num"
         message_components = message.split(',') #format: [insturment,num]
         print(message_components)
