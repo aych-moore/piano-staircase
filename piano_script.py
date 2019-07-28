@@ -22,14 +22,16 @@ pygame.init()
 pygame.mixer.music.set_volume(100)
 
 def play_drums(num):
-        print('drums')
         audio_file = "audio/drums/" + str(drum_file_numbers[num]) + ".wav"
         print(audio_file)
         pygame.mixer.Sound(audio_file).play()
         time.sleep(0.5)
 
 def play_piano(num):
-        pass
+        audio_file = "audio/piano/" + 'C' + str(num+1) + ".wav"
+        print(audio_file)
+        pygame.mixer.Sound(audio_file).play()
+        time.sleep(0.5)
 
 def play_song():
         random_time = random.randint(1,60)*0.01
@@ -57,7 +59,6 @@ while 'pigs' != 'flying':
         message = ser.readline().decode("utf-8").strip()
         print(message) #message format: "insturment,num"
         message_components = message.split(',') #format: [insturment,num]
-        print(message_components)
         if message_components[0] == 'piano':
                 play_piano(int(message_components[1]))
         elif message_components[0] == 'drums':
