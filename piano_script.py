@@ -59,9 +59,9 @@ while 'pigs' != 'flying':
         message_components = message.split(',') #format: [insturment,num]
         print(message_components)
         if message_components[0] == 'piano':
-                play_piano(message_components[1])
+                play_piano(int(message_components[1]))
         elif message_components[0] == 'drums':
-                play_drums(message_components[1])
+                play_drums(int(message_components[1]))
         
     
 
