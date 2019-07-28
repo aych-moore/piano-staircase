@@ -30,7 +30,7 @@ for letter in letters:
 drums = []
 for beat in range(1,20):
         audio_file = "audio/drums/" + str(beat) + ".wav"
-        sounds.append(pygame.mixer.Sound(audio_file))
+        drums.append(pygame.mixer.Sound(audio_file))
     
 
 pygame.mixer.set_num_channels(50)
