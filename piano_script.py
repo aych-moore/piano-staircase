@@ -3,8 +3,14 @@ import time
 import random
 import serial
 
-ser = serial.Serial('/dev/ttyACM0',9600)
-s = [0,1]
+ser = serial.Serial(
+               port='/dev/ttyUSB0',
+               baudrate = 9600,
+               parity=serial.PARITY_NONE,
+               stopbits=serial.STOPBITS_ONE,
+               bytesize=serial.EIGHTBITS,
+               timeout=1
+           )
 
 print("script begin")
 
@@ -46,8 +52,8 @@ for beat in drums:
 """
 
 while 'pigs' != 'flying':
-        read_serial=ser.readline()
-        print(read_serial)
+        x=ser.readline()
+        print(x)
     
 
 print("script end")
