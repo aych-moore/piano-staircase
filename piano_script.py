@@ -57,10 +57,13 @@ while 'pigs' != 'flying':
         message = ser.readline().strip()
         print(message) #message format: "insturment,num"
         message_components = message.split(b',') #format: [insturment,num]
+        print(message_components[0])
         if message_components[0] == 'piano':
                 play_piano(message_components[1])
         elif message_components[0] == 'drums':
                 play_drums(message_components[1])
+        else:
+                print('none')
         
     
 
