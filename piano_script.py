@@ -5,6 +5,10 @@ import random
 print("script begin")
 
 letters = ['A', 'B', 'C', 'D', 'E', 'F']
+drums = [
+        'acoustic-snare.mp3'
+        
+]
 
 pygame.mixer.init()
 pygame.init()
