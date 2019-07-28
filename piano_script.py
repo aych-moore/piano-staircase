@@ -15,16 +15,21 @@ ser = serial.Serial(
 print("script begin")
 
 letters = ['A', 'B', 'C', 'D', 'E', 'F']
-numbers = [1,7,8,13,11,18,16,5]
+drum_file_numbers = [1,7,8,13,11,18,16,5]
 
 pygame.mixer.init()
 pygame.init()
 pygame.mixer.music.set_volume(100)
 
-def play_drum(note):
+def play_drums(num):
+        audio_file = "audio/drums/" + str(drum_file_numbers[num]) + ".wav"
+        pygame.mixer.Sound(audio_file).play()
+        time.sleep(0.5)
+
+def play_piano():
         pass
 
-def play_piano(note):
+def play_song():
         random_time = random.randint(1,60)*0.01
         for i in range(random.randint(1,10)):
                 random.choice(sounds).play()
@@ -38,22 +43,23 @@ for letter in letters:
         audio_file = "audio/piano/" + letter + str(num) + ".wav"
         sounds.append(pygame.mixer.Sound(audio_file))
 drums = []
-for beat in numbers:
+for beat in drum_file_numbers:
         audio_file = "audio/drums/" + str(beat) + ".wav"
         drums.append(pygame.mixer.Sound(audio_file))
     
 
 pygame.mixer.set_num_channels(50)
 
-"""
-for beat in drums:
-        beat.play()
-        time.sleep(1.5)
-"""
 
 while 'pigs' != 'flying':
-        x=ser.readline()
-        print(x)
+        message = ser.readline() 
+        print("Incoming from arduino: " + message) #message format: "insturment,num"
+        message_components = message.split(',') #format: [insturment,num]
+        if message_components[0] == 'piano':
+                play_piano(message_components[1])
+        elif message_components[0] == 'drums':
+                play_drums(message_components[1])
+        
     
 
 print("script end")
