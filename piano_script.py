@@ -5,7 +5,7 @@ import random
 print("script begin")
 
 letters = ['A', 'B', 'C', 'D', 'E', 'F']
-
+numbers = [1,5,7,8,11,13,16,18]
 
 pygame.mixer.init()
 pygame.init()
@@ -28,7 +28,7 @@ for letter in letters:
         audio_file = "audio/piano/" + letter + str(num) + ".wav"
         sounds.append(pygame.mixer.Sound(audio_file))
 drums = []
-for beat in range(1,20):
+for beat in numbers:
         audio_file = "audio/drums/" + str(beat) + ".wav"
         drums.append(pygame.mixer.Sound(audio_file))
     
