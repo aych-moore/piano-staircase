@@ -37,7 +37,7 @@ pygame.mixer.set_num_channels(50)
 
 
 for beat in drums:
-        random.choice(sounds).play()
+        beat.play()
         time.sleep(0.5)
     
 
