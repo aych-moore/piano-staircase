@@ -34,8 +34,14 @@ sudo apt-get install python-pip
 sudo pip install pygame
 ```
 
-
-
+## Script run on boot
+'''
+sudo nano /etc/profile
+'''
+Scroll to bottom and add:
+'''
+sudo python3 /home/pi/piano-staircase/piano_script.py
+'''
 
 
 
