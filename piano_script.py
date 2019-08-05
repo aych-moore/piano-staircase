@@ -46,11 +46,11 @@ def play_song():
 sounds = []
 for letter in letters:
     for num in range(1,8):
-        audio_file = "audio/piano/" + letter + str(num) + ".wav"
+        audio_file = "/home/pi/piano-staircase/audio/piano/" + letter + str(num) + ".wav"
         sounds.append(pygame.mixer.Sound(audio_file))
 drums = []
 for beat in drum_file_numbers:
-        audio_file = "audio/drums/" + str(beat) + ".wav"
+        audio_file = "/home/pi/piano-staircase/audio/drums/" + str(beat) + ".wav"
         drums.append(pygame.mixer.Sound(audio_file))
     
 
