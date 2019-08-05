@@ -24,13 +24,13 @@ pygame.init()
 pygame.mixer.music.set_volume(100)
 
 def play_drums(num):
-        audio_file = "audio/drums/" + str(drum_file_numbers[num]) + ".wav"
+        audio_file = "/home/pi/piano-staircase/audio/drums/" + str(drum_file_numbers[num]) + ".wav"
         print(audio_file)
         pygame.mixer.Sound(audio_file).play()
         time.sleep(0.5)
 
 def play_piano(num):
-        audio_file = "audio/piano/" + 'C' + str(num+1) + ".wav"
+        audio_file = "/home/pi/piano-staircase/audio/piano/" + 'C' + str(num+1) + ".wav"
         print(audio_file)
         pygame.mixer.Sound(audio_file).play()
         time.sleep(0.5)
