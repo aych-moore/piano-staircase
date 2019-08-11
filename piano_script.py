@@ -14,7 +14,7 @@ ser = serial.Serial(
 
 print("script begin")
 
-time.sleep(2); #wait 5 seconds to give system time to init
+time.sleep(4); #wait 4 seconds to give system time to init
 
 letters = ['A', 'B', 'C', 'D', 'E', 'F']
 drum_file_numbers = [1,7,8,13,11,18,16,5]
