@@ -45,7 +45,7 @@ def play_dj(message_data):
 
 for i in range(8):
     pygame.mixer.Channel(i).play(drum_sound[i]) #play sound
-    time.sleep(0.5)
+    time.sleep(2)
 
 
 
