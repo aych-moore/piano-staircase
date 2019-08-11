@@ -32,13 +32,13 @@ piano_sound = [pygame.mixer.Sound(piano_wavs[i]) for i in range(8)]
 
 def play_drums(message_data):
     for i in range(1,9):
-        if(int(message_data[i]) >= 5 and int(message_data[i]) <= 30):
+        if(int(message_data[i]) >= 5 and int(message_data[i]) <= 130):
         #if(message_data[i] and not pygame.mixer.Channel(i).get_busy()): # sensor is active and channel empty
             pygame.mixer.Channel(i-1).play(drum_sound[i-1]) #play sound
 
 def play_piano(message_data):
     for i in range(1,9):
-        if(int(message_data[i]) >= 5 and int(message_data[i]) <= 30):
+        if(int(message_data[i]) >= 5 and int(message_data[i]) <= 130):
             if(not pygame.mixer.Channel(i-1).get_busy()): # sensor is active and channel empty
                 pygame.mixer.Channel(i-1).play(piano_sound[i-1]) #play sound
 
