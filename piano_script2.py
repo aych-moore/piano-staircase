@@ -29,7 +29,7 @@ drum_sound = [pygame.mixer.Sound(drum_wavs[i]) for i in range(8)]
 
 def play_drums(message_data):
     for i in range(1,9):
-        if(int(message_data[i]) >= 5 and int(message_data[i] <= 30)):
+        if(int(message_data[i]) >= 5 and int(message_data[i]) <= 30):
         #if(message_data[i] and not pygame.mixer.Channel(i).get_busy()): # sensor is active and channel empty
             pygame.mixer.Channel(i).play(drum_sound[i]) #play sound
         
