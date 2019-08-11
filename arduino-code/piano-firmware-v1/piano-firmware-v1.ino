@@ -50,12 +50,7 @@ void loop() {
   Serial.print(String(mode));
   for(byte i = 0; i < 8; i++){
     Serial.print(',');
-    if(distances[i] >= 5 && distances[i] >= 150){
-      Serial.print('1');
-    }
-    else{
-      Serial.print('0');
-    }
+    Serial.print(distances[i]);
     
   }
   Serial.println();
