@@ -43,24 +43,8 @@ def play_dj(message_data):
     
 
 
-
-
-"""
-#make sound objects
-foundation = pygame.mixer.Sound(dj_wavs[0])
-dj_tracks = [pygame.mixer.Sound(dj_wavs[i]) for i in range(1,8)]
-
-#play all tracks
-pygame.mixer.Channel(0).play(foundation, loops=-1) #play foundation
-for i in range(1,8):
-    pygame.mixer.Channel(i).play(dj_tracks[i-1], loops=-1) #play track
-    dj_tracks[i-1].set_volume(0) #mute all tracks
-
-
-foundation.set_volume(0)
-dj_tracks[1].set_volume(1)
-dj_tracks[2].set_volume(1)
-"""
+for i in range(8):
+    pygame.mixer.Channel(i).play(drum_sound[i]) #play sound
 
 
 
