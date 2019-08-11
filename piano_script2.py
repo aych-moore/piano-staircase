@@ -54,4 +54,4 @@ while 'pigs' != 'flying':
     print(message) #message format: "insturment,num"
     message_components = message.split(',') #format: [insturment,num]
     if message_components[0] == '0':
-        play_dj(message_components)
+        play_drums(message_components)
