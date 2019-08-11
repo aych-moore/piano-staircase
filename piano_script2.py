@@ -40,12 +40,6 @@ def play_dj(message_data):
         if(int(message_data[i]) >= 5 and int(message_data[i]) <= 30):
         #if(message_data[i] and not pygame.mixer.Channel(i).get_busy()): # sensor is active and channel empty
             pygame.mixer.Channel(i).play(dj_tracks[i]) #play sound
-    
-
-
-for i in range(8):
-    pygame.mixer.Channel(i).play(drum_sound[i]) #play sound
-    time.sleep(2)
 
 
 
