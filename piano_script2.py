@@ -58,7 +58,7 @@ dj_tracks[2].set_volume(1)
 
 
 while 'pigs' != 'flying':
-    print(ser.readline())
+    #print(ser.readline())
     message = ser.readline().decode("utf-8").strip()
     print(message) #message format: "insturment,num"
     message_components = message.split(',') #format: [insturment,num]
