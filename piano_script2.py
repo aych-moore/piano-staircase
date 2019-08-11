@@ -18,7 +18,7 @@ time.sleep(4); #wait 4 seconds to give system time to init
 
 letters = ['A', 'B', 'C', 'D', 'E', 'F']
 drum_wavs = ["/home/pi/piano-staircase/audio/drums/" + str(i) + ".wav" for i in [1,7,8,13,11,18,16,5]]
-dj_wavs = ["audio/dj/" + str(i) + ".wav" for i in range(1,8)]
+dj_wavs = ["/home/pi/piano-staircase/audio/dj/" + str(i) + ".wav" for i in range(1,8)]
 
 
 pygame.mixer.init(channels = 8)
