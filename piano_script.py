@@ -19,7 +19,9 @@ time.sleep(4); #wait 4 seconds to give system time to init
 letters = ['A', 'B', 'C', 'D', 'E', 'F']
 drum_file_numbers = [1,7,8,13,11,18,16,5]
 
-pygame.mixer.init()
+
+
+pygame.mixer.init(channels = 9)
 pygame.init()
 pygame.mixer.music.set_volume(100)
 
@@ -54,18 +56,13 @@ for beat in drum_file_numbers:
         drums.append(pygame.mixer.Sound(audio_file))
     
 
-pygame.mixer.set_num_channels(50)
 
 
 while 'pigs' != 'flying':
         message = ser.readline().decode("utf-8").strip()
         print(message) #message format: "insturment,num"
         message_components = message.split(',') #format: [insturment,num]
-        if message_components[0] == 'piano':
+        if message_components[0] == '0':
                 play_piano(int(message_components[1]))
-        elif message_components[0] == 'drums':
+        elif message_components[0] == '1':
                 play_drums(int(message_components[1]))
-        
-    
-
-print("script end")
