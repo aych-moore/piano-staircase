@@ -26,7 +26,7 @@ pygame.init()
 pygame.mixer.music.set_volume(100)
 
 drum_sound = [pygame.mixer.Sound(drum_wavs[i]) for i in range(8)]
-dj_tracks = [pygame.mixer.Sound(dj_wavs[i]) for i in range(8)]
+#dj_tracks = [pygame.mixer.Sound(dj_wavs[i]) for i in range(8)]
 
 
 def play_drums(message_data):
