@@ -45,7 +45,6 @@ def log_interaction():
         f.close()
 
 def play_drums(message_data):
-    print("PLAY DRUMS")
     for i in range(1,9):
         if(int(message_data[i]) >= 5 and int(message_data[i]) <= 20):
             if(not pygame.mixer.Channel(i-1).get_busy()): # sensor is active and channel empty
@@ -53,15 +52,15 @@ def play_drums(message_data):
                 log_interaction()
 
 def play_piano(message_data):
-    print("PLAY PIANO")
     for i in range(1,9):
         if(int(message_data[i]) >= 5 and int(message_data[i]) <= 20):
+            print("PLAY PIANO ACTIVE")
             if(not pygame.mixer.Channel(i-1).get_busy()): # sensor is active and channel empty
+                print("PLAY PIANO NOT BUSY")
                 pygame.mixer.Channel(i-1).play(piano_sound[i-1]) #play sound
                 log_interaction()
 
 def play_dj(message_data):
-    print("PLAY DJ")
     for i in range(1,9):
         if(int(message_data[i]) >= 5 and int(message_data[i]) <= 20):
             dj_tracks[i-1].set_volume(1) #unmte
