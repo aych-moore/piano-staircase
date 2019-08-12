@@ -29,7 +29,7 @@ dj_wavs = ["audio/dj/f" + str(i) + ".wav" for i in range(1,4)] + ["audio/dj/" + 
 pygame.mixer.pre_init(44100, 16, 8, 4096) #frequency, size, channels, buffersize
 pygame.init() #turn all of pygame on.
 pygame.mixer.music.set_volume(100)
-display = pygame.display.set_mode((400, 300)) #doesn't work without display. idk why
+#display = pygame.display.set_mode((400, 300)) #doesn't work without display. idk why
 
 #make sound objects
 dj_tracks = [pygame.mixer.Sound(dj_wavs[i]) for i in range(8)]
