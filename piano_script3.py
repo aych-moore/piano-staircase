@@ -71,7 +71,7 @@ while 'pigs' != 'flying':
     try:
         message = ser.readline().decode("utf-8").strip()
         print(message) #message format: "insturment,num"
-        message_components = message.split(',') #format: [insturment,num]
+        message_components = message.split(',       ') #format: [insturment,num]
         if message_components[0] == '0': #mode
             current_mode = 0
             play_piano(message_components)
