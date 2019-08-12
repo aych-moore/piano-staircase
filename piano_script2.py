@@ -62,5 +62,7 @@ while 'pigs' != 'flying':
         message_components = message.split(',') #format: [insturment,num]
         if message_components[0] == '0':
             play_piano(message_components)
+        if message_components[0] == '1':
+            play_drums(message_components)
     except:
         pass
