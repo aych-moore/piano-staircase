@@ -83,7 +83,7 @@ def play_dj(message_data):
     for i in range(1,9):
         if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
             log_interaction()
-            pygame.mixer.Channel(i-1).set_volume(0.1) #unmte
+            pygame.mixer.Channel(i-1).set_volume(1) #unmte
         else:
             pygame.mixer.Channel(i-1).set_volume(0) #mute
             
@@ -94,14 +94,6 @@ def stop_all_channels():
     for i in range(0,8):
         pygame.mixer.Channel(i).stop() #mute all tracks
         pygame.mixer.Channel(i).set_volume(1) #unmte
-
-
-pygame.mixer.Channel(0).play(dj_tracks[0], loops=-1) #play track
-pygame.mixer.Channel(0).set_volume(0.1) #mute all tracks
-
-
-
-stop_all_channels()
 
 while 'pigs' != 'flying':
     try:
