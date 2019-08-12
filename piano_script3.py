@@ -33,7 +33,7 @@ pygame.mixer.music.set_volume(100)
 """
 
 
-pygame.mixer.init(channels = 8)
+pygame.mixer.init(channels = 17)
 pygame.init()
 pygame.mixer.music.set_volume(100)
 
@@ -75,7 +75,9 @@ def play_dj(message_data):
         else:
             dj_tracks[i-1].set_volume(0) #mute
 
-
+def mute_dj():
+    for i in range(1,9):
+        dj_tracks[i-1].set_volume(0) #mute
 
 while 'pigs' != 'flying':
     try:
@@ -83,15 +85,17 @@ while 'pigs' != 'flying':
         print(message) #message format: "insturment,num"
         message_components = message.split(',') #format: [insturment,num]
         if message_components[0] == '0': #mode
+            mute_dj()
             current_mode = 0
             play_piano(message_components)
         if message_components[0] == '1': #mode
+            mute_dj()
             current_mode = 1
             play_drums(message_components)
         if message_components[0] == '2': #mode
             if(current_mode != 2): #if this is the first time on mode 2 from another mode
                 for i in range(8): #play all tracks quietly
-                    pygame.mixer.Channel(i).play(dj_tracks[i], loops=-1) #play track
+                    pygame.mixer.Channel(i+8).play(dj_tracks[i], loops=-1) #play track
                     dj_tracks[i].set_volume(0) #mute all tracks
             current_mode = 2
             play_dj(message_components)
