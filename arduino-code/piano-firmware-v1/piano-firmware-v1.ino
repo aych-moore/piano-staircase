@@ -30,21 +30,14 @@ void loop() {
     
     distances[echoPinNum] = pulseIn(echoPins[echoPinNum], HIGH, 10000UL)*0.034/2; // Reads the echoPin, returns the sound wave travel time in microseconds then converts to distance
 
-    /*
-    if(echoPinNum == 7){
-      Serial.print(echoPinNum);
-      Serial.print(": ");
-      Serial.print(distances[echoPinNum]);
-    }
-    */
   }
 
 
   /* OUTPUT FORMAT:
-   *     mode,data,data,data,data,data,data,data
-   *  eg 5,1,1,1,0,1,0,0,1
+   *     mode,distance,distance,distance,distance,distance,distance,distance
+   *  eg 1,14,0,167,23,0,0,0,99
    *  mode: int 0, room for expansion eg 0-10 modes
-   *  data: bool 0/1
+   *  distance: int
    */
 
   Serial.print(String(mode));
