@@ -102,28 +102,28 @@ def stop_all_channels():
 
 while 'pigs' != 'flying':
     print(interaction_count)
-    try:
-        message = ser.readline().decode("utf-8").strip()
-        print(message) #message format: "insturment,num"
-        message_components = message.split(',') #format: [insturment,num]
-        if message_components[0] == '0': #mode
-            current_mode = 0
-            play_piano(message_components)
-        if message_components[0] == '1': #mode
-            current_mode = 1
-            play_drums(message_components)
-        if message_components[0] == '3': #mode
-            current_mode = 2
-            play_piano2(message_components)
+    #try:
+    message = ser.readline().decode("utf-8").strip()
+    print(message) #message format: "insturment,num"
+    message_components = message.split(',') #format: [insturment,num]
+    if message_components[0] == '0': #mode
+        current_mode = 0
+        play_piano(message_components)
+    if message_components[0] == '1': #mode
+        current_mode = 1
+        play_drums(message_components)
+    if message_components[0] == '3': #mode
+        current_mode = 2
+        play_piano2(message_components)
 
 
-        if message_components[0] == '2': #mode
-            if(current_mode != 2): #if this is the first time on mode 2 from another mode
-                for i in range(8): #play all tracks quietly
-                    pygame.mixer.Channel(i).play(dj_tracks[i], loops=-1) #play track
-                    pygame.mixer.Channel(i).set_volume(0) #mute all tracks
-            current_mode = 2
-            play_dj(message_components)
+    if message_components[0] == '2': #mode
+        if(current_mode != 2): #if this is the first time on mode 2 from another mode
+            for i in range(8): #play all tracks quietly
+                pygame.mixer.Channel(i).play(dj_tracks[i], loops=-1) #play track
+                pygame.mixer.Channel(i).set_volume(0) #mute all tracks
+        current_mode = 2
+        play_dj(message_components)
 
-    except:
-        pass
+    #except:
+      #  pass
