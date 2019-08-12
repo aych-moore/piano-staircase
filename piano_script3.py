@@ -96,7 +96,7 @@ while 'pigs' != 'flying':
             if(current_mode != 2): #if this is the first time on mode 2 from another mode
                 for i in range(8): #play all tracks quietly
                     pygame.mixer.Channel(i+8).play(dj_tracks[i], loops=-1) #play track
-                    dj_tracks[i].set_volume(0) #mute all tracks
+                    dj_tracks[i].set_volume(1) #mute all tracks
             current_mode = 2
             play_dj(message_components)
     except:
