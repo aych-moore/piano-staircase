@@ -38,6 +38,7 @@ def log_interaction():
         f = open( '/home/pi/piano-staircase/interaction_log.txt', 'a')
         f.write("X")
         f.close()
+        interaction_count = 0
 
 def play_drums(message_data):
     for i in range(1,9):

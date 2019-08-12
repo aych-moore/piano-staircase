@@ -50,10 +50,11 @@ piano_sound = [pygame.mixer.Sound(piano_wavs[i]) for i in range(8)]
 def log_interaction():
     interaction_count += 1
     print("LOG")
-    if(interaction_count >= 12):
+    if(interaction_count >= 2):
         f = open( '/home/pi/piano-staircase/interaction_log.txt', 'a')
         f.write("C")
         f.close()
+        interaction_count = 0
 
 def play_drums(message_data):
     for i in range(1,9):
@@ -79,8 +80,10 @@ def play_dj(message_data):
     for i in range(1,9):
         if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
             pygame.mixer.Channel(i-1).set_volume(0.1) #unmte
+            log_interaction()
         else:
             pygame.mixer.Channel(i-1).set_volume(0) #mute
+            log_interaction()
 
             
 
