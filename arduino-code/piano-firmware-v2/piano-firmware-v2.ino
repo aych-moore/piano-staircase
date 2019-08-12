@@ -27,7 +27,7 @@ void setup() {
 }
 
 void loop() {
-  /*
+  
   for(byte j = 0; j < 2; j++){
     for(byte i = 0; i < 8; i += 2){
       digitalWrite(trigPins[i+j], LOW); // Clears the trigPin
@@ -40,8 +40,9 @@ void loop() {
       distances[i+j] = pulseIn(echoPins[i], HIGH, 10000UL)*0.034/2; // Reads the echoPin, returns the sound wave travel time in microseconds then converts to distance
     }
   }
-  */
   
+
+  /*
   for(byte j = 0; j < 2; j++){
     for(byte i = 0; i < 8; i += 2){
       digitalWrite(trigPins[i+j], LOW); // Clears the trigPin
@@ -60,7 +61,7 @@ void loop() {
       distances[i+j] = pulseIn(echoPins[i], HIGH, 10000UL)*0.034/2; // Reads the echoPin, returns the sound wave travel time in microseconds then converts to distance
     }
   }
-  
+  */
 
   if(digitalRead(forwardButton) == 0){ //forward pressed
     mode += 1;

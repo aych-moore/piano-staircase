@@ -58,6 +58,8 @@ def play_piano(message_data):
 while 'pigs' != 'flying':
     try:
         message = ser.readline().decode("utf-8").strip()
+        for i in range(len(message)):
+            message[i] = str(message[i]) + "         "
         print(message) #message format: "insturment,num"
         message_components = message.split(',') #format: [insturment,num]
         if message_components[0] == '0':
