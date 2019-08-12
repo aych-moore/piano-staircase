@@ -84,13 +84,13 @@ def play_dj(message_data):
 
             
 
-def mute_dj():
-    for i in range(1,9):
-        dj_tracks[i-1].set_volume(0) #mute
+def stop_all_channels():
+    for i in range(0,8):
+        pygame.mixer.Channel(i).stop() #mute all tracks
 
 
-pygame.mixer.Channel(0).play(dj_tracks[0], loops=-1) #play track
-pygame.mixer.Channel(0).set_volume(0.1) #mute all tracks
+#pygame.mixer.Channel(0).play(dj_tracks[0], loops=-1) #play track
+#pygame.mixer.Channel(0).set_volume(0.1) #mute all tracks
 
 while 'pigs' != 'flying':
     try:
@@ -98,26 +98,26 @@ while 'pigs' != 'flying':
         print(message) #message format: "insturment,num"
         message_components = message.split(',') #format: [insturment,num]
         if message_components[0] == '0': #mode
-            #mute_dj()
+            stop_all_channels()
             current_mode = 0
             play_piano(message_components)
         if message_components[0] == '1': #mode
-            #mute_dj()
+            stop_all_channels()
             current_mode = 1
             play_drums(message_components)
-        if message_components[0] == '2': #mode
-            #mute_dj()
+        if message_components[0] == '3': #mode
+            stop_all_channels()
             current_mode = 2
             play_piano2(message_components)
 
-        """
+
         if message_components[0] == '2': #mode
             if(current_mode != 2): #if this is the first time on mode 2 from another mode
                 for i in range(8): #play all tracks quietly
-                    pygame.mixer.Channel(i+8).play(dj_tracks[i], loops=-1) #play track
-                    dj_tracks[i].set_volume(1) #mute all tracks
+                    pygame.mixer.Channel(i).play(dj_tracks[i], loops=-1) #play track
+                    pygame.mixer.Channel(i).set_volume(0) #mute all tracks
             current_mode = 2
             play_dj(message_components)
-        """
+
     except:
         pass
