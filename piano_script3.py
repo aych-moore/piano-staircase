@@ -83,7 +83,7 @@ def play_dj(message_data):
     for i in range(1,9):
         if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
             log_interaction()
-            pygame.mixer.Channel(i-1).set_volume(1) #unmte
+            pygame.mixer.Channel(i-1).set_volume(0.3) #unmte
         else:
             pygame.mixer.Channel(i-1).set_volume(0) #mute
             
