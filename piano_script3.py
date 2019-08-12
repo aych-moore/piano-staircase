@@ -51,13 +51,11 @@ def log_interaction():
     global interaction_count
     interaction_count += 1
     print("LOG")
-    """
     if(interaction_count >= 2):
         f = open( '/home/pi/piano-staircase/interaction_log.txt', 'a')
         f.write("C")
         f.close()
         interaction_count = 0
-        """
 
 def play_drums(message_data):
     for i in range(1,9):
