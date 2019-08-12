@@ -33,7 +33,7 @@ pygame.mixer.music.set_volume(100)
 """
 
 
-pygame.mixer.init(channels = 17)
+pygame.mixer.pre_init(44100, 16, 17, 4096) #frequency, size, channels, buffersize
 pygame.init()
 pygame.mixer.music.set_volume(100)
 
