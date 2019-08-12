@@ -16,6 +16,9 @@ print("script begin")
 
 time.sleep(4); #wait 4 seconds to give system time to init
 
+MIN_SENSE_RANGE = 5
+MAX_SENSE_RANGE = 20
+
 interaction_count = 0 #counts interactions
 current_mode = 0
 
@@ -54,14 +57,14 @@ def log_interaction():
 
 def play_drums(message_data):
     for i in range(1,9):
-        if(int(message_data[i]) >= 5 and int(message_data[i]) <= 20):
+        if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
             if(not pygame.mixer.Channel(i-1).get_busy()): # sensor is active and channel empty
                 pygame.mixer.Channel(i-1).play(drum_sound[i-1]) #play sound
                 log_interaction()
 
 def play_piano(message_data):
     for i in range(1,9):
-        if(int(message_data[i]) >= 5 and int(message_data[i]) <= 20):
+        if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
             print("PLAY PIANO ACTIVE")
             if(not pygame.mixer.Channel(i-1).get_busy()): # sensor is active and channel empty
                 print("PLAY PIANO NOT BUSY")
@@ -70,7 +73,7 @@ def play_piano(message_data):
 
 def play_dj(message_data):
     for i in range(1,9):
-        if(int(message_data[i]) >= 5 and int(message_data[i]) <= 20):
+        if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
             dj_tracks[i-1].set_volume(1) #unmte
         else:
             dj_tracks[i-1].set_volume(0) #mute
@@ -78,6 +81,10 @@ def play_dj(message_data):
 def mute_dj():
     for i in range(1,9):
         dj_tracks[i-1].set_volume(0) #mute
+
+
+pygame.mixer.Channel(0).play(dj_tracks[0], loops=-1) #play track
+dj_tracks[0].set_volume(1) #mute all tracks
 
 while 'pigs' != 'flying':
     try:
