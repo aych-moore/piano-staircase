@@ -108,23 +108,19 @@ while 'pigs' != 'flying':
         message = ser.readline().decode("utf-8").strip()
         print(message) #message format: "insturment,num"
         message_components = message.split(',') #format: [insturment,num]
+
         if message_components[0] == '0': #mode
             if(current_mode != 0):
                 stop_all_channels()
-            else:
-                current_mode = 0
-                play_piano(message_components)
+            current_mode = 0
+            play_piano(message_components)
+
         if message_components[0] == '1': #mode
             if(current_mode != 1):
                 stop_all_channels()
-            else:
-                current_mode = 1
-                play_drums(message_components)
+            current_mode = 1
+            play_drums(message_components)
             
-                
-
-
-
         if message_components[0] == '2': #mode
             if(current_mode != 2): #if this is the first time on mode 2 from another mode
                 for i in range(8): #play all tracks quietly
