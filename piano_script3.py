@@ -17,7 +17,7 @@ print("script begin")
 time.sleep(4); #wait 4 seconds to give system time to init
 
 MIN_SENSE_RANGE = 5
-MAX_SENSE_RANGE = 20
+MAX_SENSE_RANGE = 100
 
 interaction_count = 0 #counts interactions
 current_mode = 0
@@ -51,7 +51,7 @@ def log_interaction():
     global interaction_count
     interaction_count += 1
     print("LOG")
-    if(interaction_count >= 2):
+    if(interaction_count >= 100):
         f = open( '/home/pi/piano-staircase/interaction_log.txt', 'a')
         f.write("C")
         f.close()
