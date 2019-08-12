@@ -48,7 +48,7 @@ def play_drums(message_data):
 
 def play_piano(message_data):
     for i in range(1,9):
-        if(int(message_data[i]) >= 5 and int(message_data[i]) <= 130):
+        if(int(message_data[i]) >= 5 and int(message_data[i]) <= 20):
             if(not pygame.mixer.Channel(i-1).get_busy()): # sensor is active and channel empty
                 pygame.mixer.Channel(i-1).play(piano_sound[i-1]) #play sound
                 log_interaction()
