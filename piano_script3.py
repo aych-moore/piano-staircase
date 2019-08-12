@@ -23,7 +23,7 @@ letters = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5']
 
 piano_wavs = ["/home/pi/piano-staircase/audio/piano/" + note + ".wav" for note in letters]
 drum_wavs = ["/home/pi/piano-staircase/audio/drums/" + str(i) + ".wav" for i in [1,7,8,13,11,18,16,5]]
-dj_wavs = ["audio/dj/f" + str(i) + ".wav" for i in range(1,4)] + ["audio/dj/" + str(i) + ".wav" for i in range(1,9)]
+dj_wavs = ["audio/dj/" + str(i) + ".wav" for i in range(1,9)]
 
 
 pygame.mixer.pre_init(44100, 16, 8, 4096) #frequency, size, channels, buffersize
