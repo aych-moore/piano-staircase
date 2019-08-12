@@ -78,9 +78,9 @@ def play_piano2(message_data):
 def play_dj(message_data):
     for i in range(1,9):
         if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
-            dj_tracks[i-1].set_volume(1) #unmte
+            pygame.mixer.Channel(i-1).set_volume(0.1) #unmte
         else:
-            dj_tracks[i-1].set_volume(0) #mute
+            pygame.mixer.Channel(i-1).set_volume(0) #mute
 
             
 
@@ -98,15 +98,12 @@ while 'pigs' != 'flying':
         print(message) #message format: "insturment,num"
         message_components = message.split(',') #format: [insturment,num]
         if message_components[0] == '0': #mode
-            stop_all_channels()
             current_mode = 0
             play_piano(message_components)
         if message_components[0] == '1': #mode
-            stop_all_channels()
             current_mode = 1
             play_drums(message_components)
         if message_components[0] == '3': #mode
-            stop_all_channels()
             current_mode = 2
             play_piano2(message_components)
 
