@@ -48,6 +48,7 @@ drum_sound = [pygame.mixer.Sound(drum_wavs[i]) for i in range(8)]
 piano_sound = [pygame.mixer.Sound(piano_wavs[i]) for i in range(8)]
 
 def log_interaction():
+    global interaction_count
     interaction_count += 1
     print("LOG")
     """
@@ -62,7 +63,7 @@ def play_drums(message_data):
     for i in range(1,9):
         if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
             if(not pygame.mixer.Channel(i-1).get_busy()): # sensor is active and channel empty
-                interaction_count += 1
+                log_interaction()
                 pygame.mixer.Channel(i-1).play(drum_sound[i-1]) #play sound
                 
 
@@ -70,21 +71,21 @@ def play_piano(message_data):
     for i in range(1,9):
         if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
             if(not pygame.mixer.Channel(i-1).get_busy()): # sensor is active and channel empty
-                interaction_count += 1
+                log_interaction()
                 pygame.mixer.Channel(i-1).play(piano_sound[i-1]) #play sound
                 
 
 def play_piano2(message_data):
     for i in range(1,9):
         if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
-            interaction_count += 1
+            log_interaction()
             pygame.mixer.Channel(i-1).play(piano_sound[i-1]) #play sound
             
 
 def play_dj(message_data):
     for i in range(1,9):
         if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
-            interaction_count += 1
+            log_interaction()
             pygame.mixer.Channel(i-1).set_volume(0.1) #unmte
         else:
             pygame.mixer.Channel(i-1).set_volume(0) #mute
@@ -101,7 +102,6 @@ def stop_all_channels():
 #pygame.mixer.Channel(0).set_volume(0.1) #mute all tracks
 
 while 'pigs' != 'flying':
-    print(interaction_count)
     #try:
     message = ser.readline().decode("utf-8").strip()
     print(message) #message format: "insturment,num"
