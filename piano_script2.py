@@ -26,7 +26,7 @@ drum_wavs = ["/home/pi/piano-staircase/audio/drums/" + str(i) + ".wav" for i in 
 
 pygame.mixer.init(channels = 8)
 pygame.init()
-pygame.mixer.music.set_volume(10)
+pygame.mixer.music.set_volume(100)
 
 drum_sound = [pygame.mixer.Sound(drum_wavs[i]) for i in range(8)]
 piano_sound = [pygame.mixer.Sound(piano_wavs[i]) for i in range(8)]
