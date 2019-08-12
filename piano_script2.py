@@ -34,6 +34,7 @@ piano_sound = [pygame.mixer.Sound(piano_wavs[i]) for i in range(8)]
 def log_interaction():
     interaction_count += 1
     if(interaction_count >= 10):
+        print("LOG")
         f = open( 'interaction_log.txt', 'a')
         f.write("X")
         f.close()
