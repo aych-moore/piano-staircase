@@ -27,7 +27,7 @@ void setup() {
 }
 
 void loop() {
-  
+  /*
   for(byte j = 0; j < 2; j++){
     for(byte i = 0; i < 8; i += 2){
       digitalWrite(trigPins[i+j], LOW); // Clears the trigPin
@@ -40,7 +40,17 @@ void loop() {
       distances[i+j] = pulseIn(echoPins[i], HIGH, 10000UL)*0.034/2; // Reads the echoPin, returns the sound wave travel time in microseconds then converts to distance
     }
   }
-  
+*/
+  for(byte i = 0; i < 8; i++){
+    digitalWrite(trigPins[i], LOW); // Clears the trigPin
+    delayMicroseconds(5);
+    
+    digitalWrite(trigPins[i], HIGH); // Sets the trigPin on HIGH state for 10 micro seconds
+    delayMicroseconds(10);
+    digitalWrite(trigPins[i], LOW);
+    
+    distances[i] = pulseIn(echoPins[i], HIGH, 10000UL)*0.034/2; // Reads the echoPin, returns the sound wave travel time in microseconds then converts to distance
+  }
 
   /*
   for(byte j = 0; j < 2; j++){
@@ -91,7 +101,7 @@ void loop() {
 
   Serial.print(String(mode));
   for(byte i = 0; i < 8; i++){
-    Serial.print(',');
+    Serial.print(",       ");
     Serial.print(distances[i]);
     
   }
