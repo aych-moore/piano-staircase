@@ -89,8 +89,8 @@ def mute_dj():
         dj_tracks[i-1].set_volume(0) #mute
 
 
-pygame.mixer.Channel(0).play(dj_tracks[0], loops=-1) #play track
-dj_tracks[0].set_volume(0.2) #mute all tracks
+pygame.mixer.Channel(8).play(dj_tracks[0], loops=-1) #play track
+dj_tracks[0].set_volume(1) #mute all tracks
 
 while 'pigs' != 'flying':
     try:
