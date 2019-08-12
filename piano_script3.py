@@ -60,30 +60,33 @@ def play_drums(message_data):
     for i in range(1,9):
         if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
             if(not pygame.mixer.Channel(i-1).get_busy()): # sensor is active and channel empty
-                pygame.mixer.Channel(i-1).play(drum_sound[i-1]) #play sound
                 log_interaction()
+                pygame.mixer.Channel(i-1).play(drum_sound[i-1]) #play sound
+                
 
 def play_piano(message_data):
     for i in range(1,9):
         if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
             if(not pygame.mixer.Channel(i-1).get_busy()): # sensor is active and channel empty
-                pygame.mixer.Channel(i-1).play(piano_sound[i-1]) #play sound
                 log_interaction()
+                pygame.mixer.Channel(i-1).play(piano_sound[i-1]) #play sound
+                
 
 def play_piano2(message_data):
     for i in range(1,9):
         if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
-            pygame.mixer.Channel(i-1).play(piano_sound[i-1]) #play sound
             log_interaction()
+            pygame.mixer.Channel(i-1).play(piano_sound[i-1]) #play sound
+            
 
 def play_dj(message_data):
     for i in range(1,9):
         if(int(message_data[i]) >= MIN_SENSE_RANGE and int(message_data[i]) <= MAX_SENSE_RANGE):
-            pygame.mixer.Channel(i-1).set_volume(0.1) #unmte
             log_interaction()
+            pygame.mixer.Channel(i-1).set_volume(0.1) #unmte
         else:
             pygame.mixer.Channel(i-1).set_volume(0) #mute
-            log_interaction()
+            
 
             
 
