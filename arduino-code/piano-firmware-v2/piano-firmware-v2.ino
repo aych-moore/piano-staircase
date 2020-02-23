@@ -102,7 +102,12 @@ void loop() {
   Serial.print(String(mode));
   for(byte i = 0; i < 8; i++){
     Serial.print(",       ");
-    Serial.print(distances[i]);
+    if(distances[i] < 70 && distances[i] > 3){
+      Serial.print(distances[i]);
+    }
+    else{
+      Serial.print("0");
+    }
     
   }
   Serial.println();
